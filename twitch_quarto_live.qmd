@@ -1,0 +1,27 @@
+---
+title: "Exemple de document contenant du `{webr}` avec `quarto live`"
+author: "Marie VAUGOYEAU"  
+lang: fr
+format: live-html
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+
+```{webr}
+library(ggplot2)
+
+penguins |> 
+  ggplot() +
+  aes(
+    x = bill_dep,
+    y = bill_len
+  ) +
+  geom_point() +
+  theme_bw() +
+  labs(
+    title = "Forme du bec des pingouins",
+    x = "largeur du bec (mm)",
+    y = "longueur du bec (mm)"
+  )
+```
